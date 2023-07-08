@@ -6,7 +6,7 @@ resource "google_compute_url_map" "serverlesshttploadbalancer" {
     hosts        = ["montreal_college"]
     path_matcher = "path-matcher"
   }
-
+}
   path_matcher {
     default_service = google_compute_backend_service.defaultbackend.self_link
     name            = "path-matcher"
@@ -15,3 +15,4 @@ resource "google_compute_url_map" "serverlesshttploadbalancer" {
         paths   = ["/fetchdata"]
         service = google_compute_backend_service.backendfetchdata.self_link
         }
+  }
